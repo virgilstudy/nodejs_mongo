@@ -1,0 +1,22 @@
+extends ../common/layout
+block content
+    article
+        header
+            h2 #{blog.blog_title}
+        p
+            span #{blog.author_name} 
+            span #{blog.browse_times} views 
+            span #{blog.update_time}
+        p !{blog.blog_content}
+    section
+        div(id='disqus_thread')
+    script.
+        var disqus_shortname='#{disqus}';
+        (function(){
+        var dsq=document.createElement('script');
+        dsq.type='text/javascript';
+        dsq.async=true;
+        dsq.src='//'+disqus_shortname+'.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    include ../common/footer

@@ -1,0 +1,16 @@
+<ng-include src="'/admin/templates/partials/header.html'"></ng-include>
+<div class="container">
+    <ng-include src="'/admin/templates/partials/confModal.html'"></ng-include>
+    <ng-include src="'/admin/templates/partials/alertMsg.html'"></ng-include>
+    <div ng-switch="bodyState">
+        <div ng-switch-when="articleList">
+            <ng-include src="'/admin/templates/partials/articleList.html'"></ng-include>
+        </div>
+        <div ng-switch-when="editor">
+            <ng-include src="'/admin/templates/partials/mdEditor.html'"></ng-include>
+        </div>
+        <div ng-switch-when="manager">
+            <ng-include src="'/admin/templates/partials/manage.html'"></ng-include>
+        </div>
+    </div>
+</div>

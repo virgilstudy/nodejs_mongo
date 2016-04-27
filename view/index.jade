@@ -1,0 +1,18 @@
+extends ./common/layout
+block content
+    div(id="content")
+        div(id="mainContent")
+            section
+                ul
+                    if(articles)
+                        for item in articles
+                            li(class="blogPost")
+                                h3
+                                    a(href='/blog/#{item.blogId}') #{item.blog_title}
+                                p
+                                    span #{item.author_name} 
+                                    span #{item.browse_times} views 
+                                    span #{item.update_time}
+        aside
+            include common/aside
+    include common/footer
